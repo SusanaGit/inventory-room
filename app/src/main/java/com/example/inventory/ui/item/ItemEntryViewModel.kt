@@ -51,6 +51,13 @@ class ItemEntryViewModel(
             name.isNotBlank() && price.isNotBlank() && quantity.isNotBlank()
         }
     }
+
+    // método para instertar un elemento a la db
+    suspend fun saveItem() {
+        if (validateInput()) {
+            itemsRepository.insertItem(itemUiState.itemDetails.toItem())
+        }
+    }
 }
 
 /**
