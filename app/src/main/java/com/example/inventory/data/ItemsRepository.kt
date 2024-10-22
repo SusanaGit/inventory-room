@@ -27,7 +27,7 @@ interface ItemsRepository {
     fun getAllItemsStream(): Flow<List<Item>>
 
     // devuelve un item de la db con el id específico
-    fun getItemStrem(id: Int): Flow<Item?>
+    fun getItemStream(id: Int): Flow<Item?>
 
     // inserta un item a la db
     suspend fun insertItem(item: Item)

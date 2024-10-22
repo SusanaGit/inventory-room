@@ -38,7 +38,7 @@ class ItemDetailsViewModel(
     private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
 
     val uiState : StateFlow<ItemDetailsUiState> =
-        itemsRepository.getItemStrem(itemId)
+        itemsRepository.getItemStream(itemId)
             .filterNotNull()
             .map {
                 ItemDetailsUiState(itemDetails = it.toItemDetails())
